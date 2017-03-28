@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // Making these global for now, we will need to figure out a way to have them saved on device, even when app is closed
+    // Making these global for now
+    // we will need to figure out a way to have them saved on device, even when app is closed using CoreData 
     let calendar = Calendar()
     let timer = Timer()
 

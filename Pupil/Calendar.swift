@@ -9,5 +9,15 @@
 import UIKit
 
 class Calendar: NSObject {
+    // Private Fields
+    
 
+    
+    override init(){
+        // Class Constructor
+        
+    }
+
+    
 }
+
