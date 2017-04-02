@@ -18,23 +18,18 @@
 import Foundation
 
 // This will be a singleton class where there is only one instance of it accessible to all view controllers in program
-class Global{
-    private var assignmentsArray:[Int: Assignment] = [Int:Assignment]()
     
-    static let Assignments = Global()
+var assignmentsArray: [String:Assignment]!
     
-    
-    func getAssignments() -> [Int: Assignment]{
-        return assignmentsArray
+
+
+func getAssignments() -> [String: Assignment]{
+    return assignmentsArray
         
-    }
-    
-    func addAssigment(name:String, course:Course, dueDate:Date?, importance:Bool?){
-        assignmentsArray.append(Assignment(name, course, dueDate, importance))
-    }
-    
-    func deleteAssignment(assignemntID:Int){
-        assignmentsArray.
-    }
 }
 
+
+func addAssignment(_ name:String, _ course:Course, _ dueDate:Date?, _ importance:Bool?){
+    
+}
+    
