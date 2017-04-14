@@ -16,6 +16,7 @@
 		19DCF24D1E88B2640066C65B /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF24C1E88B2640066C65B /* Assignment.swift */; };
 		19DCF24F1E88B2A80066C65B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF24E1E88B2A80066C65B /* Timer.swift */; };
 		19DCF2511E88B2BA0066C65B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2501E88B2BA0066C65B /* Course.swift */; };
+		19F2E8361E8A16B4003EE340 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F2E8351E8A16B4003EE340 /* Data.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		19DCF24C1E88B2640066C65B /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = Pupil/Assignment.swift; sourceTree = "<group>"; };
 		19DCF24E1E88B2A80066C65B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = Pupil/Timer.swift; sourceTree = "<group>"; };
 		19DCF2501E88B2BA0066C65B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Course.swift; path = Pupil/Course.swift; sourceTree = "<group>"; };
+		19F2E8351E8A16B4003EE340 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				19DCF23B1E88B1390066C65B /* Main.storyboard */,
 				19DCF24B1E88B2020066C65B /* Model */,
 				19DCF23E1E88B1390066C65B /* Assets.xcassets */,
+				19F2E8351E8A16B4003EE340 /* Data.swift */,
 				19DCF2401E88B1390066C65B /* LaunchScreen.storyboard */,
 				19DCF2431E88B1390066C65B /* Info.plist */,
 			);
@@ -158,6 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				19F2E8361E8A16B4003EE340 /* Data.swift in Sources */,
 				19DCF2511E88B2BA0066C65B /* Course.swift in Sources */,
 				19DCF24D1E88B2640066C65B /* Assignment.swift in Sources */,
 				19DCF23A1E88B1390066C65B /* ViewController.swift in Sources */,
@@ -325,6 +329,7 @@
 				19DCF2481E88B1390066C65B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

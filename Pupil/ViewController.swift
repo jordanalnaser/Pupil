@@ -10,7 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    // Making these global for now, we will need to figure out a way to have them saved on device, even when app is closed
+    // Making these global for now
+    // we will need to figure out a way to have them saved on device, even when app is closed using CoreData 
     let calendar = Calendar()
     let timer = Timer()
 
@@ -19,9 +20,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view
         
-
+        addCourse("math")
+        addAssignment("ass1", "math", "22/2/1993", true)
         
-        
+        deleteAssignment("ass1math")
         
         
         
