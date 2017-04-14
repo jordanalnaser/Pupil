@@ -17,19 +17,60 @@
 
 import Foundation
 
-// This will be a singleton class where there is only one instance of it accessible to all view controllers in program
+// This will be a singleton where there is only one instance of it accessible to everything else in program
     
-var assignmentsArray: [String:Assignment]!
-    
+var assignments = [String : Assignment]()
+var courses = [String: Course]()
 
 
-func getAssignments() -> [String: Assignment]{
-    return assignmentsArray
+func getAssignments() -> [String : Assignment]{
+    return assignments
         
 }
 
-
-func addAssignment(_ name:String, _ course:Course, _ dueDate:Date?, _ importance:Bool?){
+// Search for a course in the diconary of courses
+func findCourse(_ name:String) -> Bool{
+    for course in courses {
+        if(course.key == name){
+        // course found in dictonary
+            return true
+        }
+    }
     
+    //course not found in dicaotnary
+    return false
+}
+
+func addCourse(_ name:String){
+    // adding to courses dicaonary a new course with the name given, and using the name as the key
+    courses[name] = Course(name)
+}
+
+func deleteCourse(_ courseKey:String){
+    if courses[courseKey] != nil {
+        //        assignment exists, not get rid of it
+        courses.removeValue(forKey: courseKey)
+    } else{
+        //        Course doesnt exist, throw an error to be handleded later
+    }
+}
+
+func addAssignment(_ name:String, _ courseName:String, _ dueDate:String, _ importance:Bool?){
+    // Add new assingment to assignments dicnoarty 
+    if findCourse(courseName){
+        // Course exists, add assignment, and tie it to that course (using a combination of assignment name and course name as key for this aqssingment)
+        assignments[String(name + courseName)] = Assignment(name, courses[courseName]!, dueDate, importance)
+    }else{
+        // Error would be thrown here to be hadnled by calling function
+    }
+}
+
+func deleteAssignment(_ assignmentKey:String){
+    if assignments[assignmentKey] != nil {
+//        assignment exists, not get rid of it
+        assignments.removeValue(forKey: assignmentKey)
+    } else{
+//        assignment doesnt exist, throw an error to be handleded later
+    }
 }
     
