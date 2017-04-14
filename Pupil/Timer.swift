@@ -9,5 +9,11 @@
 import UIKit
 
 class Timer: NSObject {
+    // Private Fields
+    
+    
+    override init(){
+        // Class Constructor
+    }
 
 }
