@@ -20,7 +20,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view
         
+        addCourse("math")
+        addAssignment("ass1", "math", "22/2/1993", true)
         
+        deleteAssignment("ass1math")
         
         
         
