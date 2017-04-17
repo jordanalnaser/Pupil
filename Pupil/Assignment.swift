@@ -26,7 +26,19 @@ class Assignment: NSObject {
         self.importance = importance
     }
     
+    func editAssignment(_ name:String, _ dueDate:String, _ importance:Bool?){
+        
+    }
     
+    func getID() -> String{
+        // this returns the assignment id which is made up of the name of the assignment and its course name
+        return name+course.getName()
+    }
+    
+    func getName() ->String {
+        return name
+    }
+
 }
 
 
