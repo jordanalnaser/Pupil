@@ -16,7 +16,7 @@ class Assignment: NSObject {
     private var importance:Bool?
     private var completedFlag:Bool = false
     private var grade:Double!
-    
+    private var tag:Int = 0
     
     init(_ name:String, _ course:Course, _ dueDate:String, _ importance:Bool?){
         // Class Constructor
@@ -25,6 +25,7 @@ class Assignment: NSObject {
         self.dueDate = dueDate
         self.importance = importance
     }
+    
     
     func editAssignment(_ name:String, _ dueDate:String, _ importance:Bool?){
         

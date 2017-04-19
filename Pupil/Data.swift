@@ -65,6 +65,7 @@ func addAssignment(_ name:String, _ courseName:String, _ dueDate:String, _ impor
     }
 }
 
+
 func deleteAssignment(_ assignmentKey:String){
     if assignments[assignmentKey] != nil {
 //        assignment exists, not get rid of it

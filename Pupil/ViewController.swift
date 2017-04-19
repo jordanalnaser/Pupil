@@ -13,6 +13,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
 //    Story Board Outlets
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var mainTableView: UITableView!
+    @IBOutlet weak var plusButton: UIImageView!
     
     // cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "cell"
@@ -21,6 +22,12 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
        
         super.viewDidLoad()
         // Do any additional setup after loading the view
+       
+        // this is used to give the plus button ability to be tapped
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(plusButtonPressed(tapGestureRecognizer:)))
+        plusButton.isUserInteractionEnabled = true
+        plusButton.addGestureRecognizer(tapGestureRecognizer)
+        
         
         // Temporary Test course and assignment
         addCourse("Math")
@@ -42,10 +49,24 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         // Dispose of any resources that can be recreated.
     }
 
-    
-    @IBAction func plusButton(_ sender: UIButton) {
-        // Stuff here happens after the user presses the plus button
-        print("You tapped cell number (plus).")
+    func plusButtonPressed(tapGestureRecognizer: UITapGestureRecognizer){
+        // plus button has been pressed, do stuff now
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
+        let degrees = atan2f(Float(tappedImage.transform.b), Float(tappedImage.transform.a)) * Float(180 / Double.pi);
+
+        // Add the two subviews to add assignment, and add class
+        UIView.animate(withDuration: 0.4, animations: {
+            if degrees > 50 {
+                // plus button is open, close it
+                tappedImage.transform = CGAffineTransform.init(rotationAngle: 0)
+
+            }else{
+                // plus button is closed, open it
+                tappedImage.transform = CGAffineTransform.init(rotationAngle: 45)
+
+            }
+        })
+        
     }
     
     
@@ -63,10 +84,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         let cell:UITableViewCell = self.mainTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
         
         // get tjhe name of the cell from the assignments array
-        let value = Array(assignments.values)[indexPath.row]
-        
+        let assignment = Array(assignments.values)[indexPath.row]
+
         // set the text from the data model
-        cell.textLabel?.text = value.getName()
+        cell.textLabel?.text = assignment.getName()
+     
         return cell
     }
     

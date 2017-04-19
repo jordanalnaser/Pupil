@@ -32,40 +32,37 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0kG-zI-nI5" userLabel="PlusButton">
-                                <rect key="frame" x="279" y="572" width="75" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="G4A-by-Icd"/>
-                                    <constraint firstAttribute="width" constant="75" id="NmY-kt-YXK"/>
-                                </constraints>
-                                <state key="normal" title="Button" image="plus"/>
-                                <connections>
-                                    <action selector="plusButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NQI-iU-pIg"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cMe-oD-jld" userLabel="MainTableView">
-                                <rect key="frame" x="0.0" y="50" width="375" height="512"/>
+                                <rect key="frame" x="0.0" y="50" width="375" height="464"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.40792317150000001" green="0.35998728660000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="EsX-lr-uHv" userLabel="plusButton">
+                                <rect key="frame" x="280" y="584" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="2eM-Gs-xul"/>
+                                    <constraint firstAttribute="height" constant="75" id="xRL-4a-Q8i"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="cMe-oD-jld" firstAttribute="top" secondItem="y6W-52-Eb4" secondAttribute="bottom" constant="5" id="3pt-Pj-86N"/>
+                            <constraint firstAttribute="trailing" secondItem="EsX-lr-uHv" secondAttribute="trailing" constant="20" id="Cv0-vg-R5R"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y6W-52-Eb4" secondAttribute="trailingMargin" id="FHj-ea-pc5"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0kG-zI-nI5" secondAttribute="bottom" constant="20" id="K2L-Fs-fTu"/>
                             <constraint firstItem="y6W-52-Eb4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LNI-Wt-alA"/>
                             <constraint firstItem="y6W-52-Eb4" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="TO4-dU-csj"/>
                             <constraint firstItem="y6W-52-Eb4" firstAttribute="leadingMargin" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Z1z-dP-idF"/>
-                            <constraint firstItem="0kG-zI-nI5" firstAttribute="top" secondItem="cMe-oD-jld" secondAttribute="bottom" constant="10" id="ZQc-oL-Qgg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EsX-lr-uHv" secondAttribute="bottom" constant="8" id="cy3-V2-1XC"/>
                             <constraint firstItem="cMe-oD-jld" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fnk-yf-jiq"/>
+                            <constraint firstItem="EsX-lr-uHv" firstAttribute="top" secondItem="cMe-oD-jld" secondAttribute="bottom" constant="70" id="jfy-Km-uA6"/>
                             <constraint firstAttribute="trailing" secondItem="cMe-oD-jld" secondAttribute="trailing" id="w8M-jv-8is"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="0kG-zI-nI5" secondAttribute="trailing" constant="5" id="z04-eW-VPf"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dateLabel" destination="y6W-52-Eb4" id="U3F-d8-BDF"/>
                         <outlet property="mainTableView" destination="cMe-oD-jld" id="opK-PU-EJO"/>
+                        <outlet property="plusButton" destination="EsX-lr-uHv" id="FEh-sH-MY8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
