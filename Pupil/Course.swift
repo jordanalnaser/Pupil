@@ -26,7 +26,7 @@ class Course: NSObject {
     }
 
     func addSyllabus(){
-        // do stuff here to launch cmaera, and store pictures into a [UIImage] then assignt it to the optional private field syllabus
+        // do stuff here to launch camera, and store pictures into a [UIImage] then assignt it to the optional private field syllabus
     }
     
     func addGrade(_ grade:Double){
