@@ -60,6 +60,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             if degrees > 50 {
                 // plus button is open, close it
                 tappedImage.transform = CGAffineTransform.init(rotationAngle: 0)
+                self.mainTableView.reloadData()
 
             }else{
                 // plus button is closed, open it
@@ -68,15 +69,17 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
                 
                 // making the temporary assignment view that will be used to input data
                 // Assinging its frame to werid setup values to allow for animation to fix it later and create a nice springy animation
-                let tempAssView = AddAssignmentView(frame: CGRect(x: frame.midX + 5, y: frame.midY + 20, width: 1, height: 1))
-                
+                let tempAssView = AddAssignmentView(frame: CGRect(x: frame.minX + 5, y: frame.minY + 20, width: frame.width - 10, height: frame.height - 25))
+                tempAssView.contentScaleFactor = 0.1
                 // This will be a Temporary view of an Ass adding screen
+//tempAssView.frame = CGRect(x: frame.midX + 5, y: frame.midY + 20, width: 1, height: 1)
                 self.view.addSubview(tempAssView)
                 
                 
                 // This adds the Springy Animation
                 UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
-                    tempAssView.frame = CGRect(x: frame.minX + 5, y: frame.minY + 20, width: frame.width - 10, height: frame.height - 25)
+                   // tempAssView.frame = CGRect(x: frame.minX + 5, y: frame.minY + 20, width: frame.width - 10, height: frame.height - 25)
+                    tempAssView.contentScaleFactor = 1
                 },completion:  nil)
                
             }
@@ -84,7 +87,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
     }
     
-    
+
     
 // Table Stuff
     // number of rows in table view

@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1996D09B1EA6EF470058EBF2 /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */; };
-		1996D09E1EA714D00058EBF2 /* UICheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996D09D1EA714D00058EBF2 /* UICheckBox.swift */; };
 		19DCF2381E88B1390066C65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2371E88B1390066C65B /* AppDelegate.swift */; };
 		19DCF23A1E88B1390066C65B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2391E88B1390066C65B /* ViewController.swift */; };
 		19DCF23D1E88B1390066C65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19DCF23B1E88B1390066C65B /* Main.storyboard */; };
@@ -23,7 +22,6 @@
 
 /* Begin PBXFileReference section */
 		1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
-		1996D09D1EA714D00058EBF2 /* UICheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICheckBox.swift; sourceTree = "<group>"; };
 		19DCF2341E88B1390066C65B /* Pupil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19DCF2371E88B1390066C65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19DCF2391E88B1390066C65B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,7 +59,6 @@
 		1996D09F1EA7150E0058EBF2 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				1996D09D1EA714D00058EBF2 /* UICheckBox.swift */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -187,7 +184,6 @@
 				19F2E8361E8A16B4003EE340 /* Data.swift in Sources */,
 				19DCF2511E88B2BA0066C65B /* Course.swift in Sources */,
 				19DCF24D1E88B2640066C65B /* Assignment.swift in Sources */,
-				1996D09E1EA714D00058EBF2 /* UICheckBox.swift in Sources */,
 				19DCF23A1E88B1390066C65B /* ViewController.swift in Sources */,
 				19DCF24A1E88B1F80066C65B /* Calendar.swift in Sources */,
 				19DCF24F1E88B2A80066C65B /* Timer.swift in Sources */,
