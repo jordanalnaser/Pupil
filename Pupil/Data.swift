@@ -21,6 +21,7 @@ import Foundation
     
 var assignments = [String : Assignment]()
 var courses = [String: Course]()
+var assignmentImportanceOptions = ["High", "Normal", "Low"]
 
 
 func getAssignments() -> [String : Assignment]{
@@ -55,7 +56,7 @@ func deleteCourse(_ courseKey:String){
     }
 }
 
-func addAssignment(_ name:String, _ courseName:String, _ dueDate:String, _ importance:Bool?){
+func addAssignment(_ name:String, _ courseName:String, _ dueDate:Date, _ importance:String){
     // Add new assingment to assignments dicnoarty 
     if findCourse(courseName){
         // Course exists, add assignment, and tie it to that course (using a combination of assignment name and course name as key for this aqssingment)

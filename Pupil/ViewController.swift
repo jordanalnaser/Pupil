@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSource, AddButtonDelegate{
     
 //    Story Board Outlets
     @IBOutlet weak var dateLabel: UILabel!
@@ -28,14 +28,11 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         plusButton.isUserInteractionEnabled = true
         plusButton.addGestureRecognizer(tapGestureRecognizer)
         
-        
-        
-        // Temporary Test course and assignment
+    
+        // Temp Add Classes
         addCourse("Math")
-        addAssignment("Derivatives", "Math", "4/18/2017", nil)
         addCourse("English")
-        addAssignment("Paper", "English", "5/2/2017", true)
-        
+        addCourse("Programming")
         
         // Register the table view cell class and its reuse id
         self.mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
@@ -43,6 +40,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         // This view controller itself will provide the delegate methods for when cells are tapped and row data for the table view cells.
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,33 +58,47 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             if degrees > 50 {
                 // plus button is open, close it
                 tappedImage.transform = CGAffineTransform.init(rotationAngle: 0)
-                self.mainTableView.reloadData()
 
             }else{
                 // plus button is closed, open it
                 tappedImage.transform = CGAffineTransform.init(rotationAngle: 45)
-                let frame = self.view.frame
-                
-                // making the temporary assignment view that will be used to input data
-                // Assinging its frame to werid setup values to allow for animation to fix it later and create a nice springy animation
-                let tempAssView = AddAssignmentView(frame: CGRect(x: frame.minX + 5, y: frame.minY + 20, width: frame.width - 10, height: frame.height - 25))
-                tempAssView.contentScaleFactor = 0.1
-                // This will be a Temporary view of an Ass adding screen
-//tempAssView.frame = CGRect(x: frame.midX + 5, y: frame.midY + 20, width: 1, height: 1)
-                self.view.addSubview(tempAssView)
-                
-                
-                // This adds the Springy Animation
-                UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
-                   // tempAssView.frame = CGRect(x: frame.minX + 5, y: frame.minY + 20, width: frame.width - 10, height: frame.height - 25)
-                    tempAssView.contentScaleFactor = 1
-                },completion:  nil)
-               
+                self.addAssignmentView()
             }
         })
         
     }
     
+    
+    // This function is used to add an assignment view to input data for a new assignment
+    func addAssignmentView(){
+        let frame = self.view.frame
+        
+        // making the temporary assignment view that will be used to input data
+        let addAssignmentView = AddAssignmentView(frame: CGRect(x: frame.minX + 5, y: frame.minY + 20, width: frame.width - 10, height: frame.height - 25))
+        
+        // used for the animation to work
+        addAssignmentView.contentScaleFactor = 0.1
+        
+        // Setting the delegate of this instance to be this view controller
+        addAssignmentView.delegate = self
+        
+        self.view.addSubview(addAssignmentView)
+        
+        
+        
+        // This scales the view back to 1 for a nice Animation
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+            addAssignmentView.contentScaleFactor = 1
+        },completion:  nil)
+
+    }
+
+    // This function is triggered via the delegate class(this class)when user taps the add button in AddAssignmentView
+    func finishedAddingAssigment(){
+        self.mainTableView.reloadData()
+        
+    }
+   
 
     
 // Table Stuff
@@ -104,7 +116,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
         // get tjhe name of the cell from the assignments array
         let assignment = Array(assignments.values)[indexPath.row]
-        
         
         // set the text from the data model
         cell.textLabel?.text = assignment.getName()
