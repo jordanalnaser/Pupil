@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1996D09B1EA6EF470058EBF2 /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */; };
 		19DCF2381E88B1390066C65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2371E88B1390066C65B /* AppDelegate.swift */; };
 		19DCF23A1E88B1390066C65B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2391E88B1390066C65B /* ViewController.swift */; };
 		19DCF23D1E88B1390066C65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19DCF23B1E88B1390066C65B /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
 		19DCF2341E88B1390066C65B /* Pupil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19DCF2371E88B1390066C65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19DCF2391E88B1390066C65B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -45,6 +47,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1996D09C1EA6EF500058EBF2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */,
+			);
+			name = Views;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		1996D09F1EA7150E0058EBF2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
 		19DCF22B1E88B1380066C65B = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +85,7 @@
 				19DCF2371E88B1390066C65B /* AppDelegate.swift */,
 				19DCF2391E88B1390066C65B /* ViewController.swift */,
 				19DCF23B1E88B1390066C65B /* Main.storyboard */,
+				1996D09C1EA6EF500058EBF2 /* Views */,
 				19DCF24B1E88B2020066C65B /* Model */,
 				19DCF23E1E88B1390066C65B /* Assets.xcassets */,
 				19F2E8351E8A16B4003EE340 /* Data.swift */,
@@ -83,6 +102,7 @@
 				19DCF24C1E88B2640066C65B /* Assignment.swift */,
 				19DCF24E1E88B2A80066C65B /* Timer.swift */,
 				19DCF2501E88B2BA0066C65B /* Course.swift */,
+				1996D09F1EA7150E0058EBF2 /* Helpers */,
 			);
 			name = Model;
 			path = ..;
@@ -168,6 +188,7 @@
 				19DCF24A1E88B1F80066C65B /* Calendar.swift in Sources */,
 				19DCF24F1E88B2A80066C65B /* Timer.swift in Sources */,
 				19DCF2381E88B1390066C65B /* AppDelegate.swift in Sources */,
+				1996D09B1EA6EF470058EBF2 /* AddAssignmentView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

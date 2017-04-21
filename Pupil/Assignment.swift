@@ -12,13 +12,13 @@ class Assignment: NSObject {
     // Private Fields
     private var name:String!
     private var course:Course!
-    private var dueDate = String()
-    private var importance:Bool?
+    private var dueDate = Date()
+    private var importance = String()
     private var completedFlag:Bool = false
     private var grade:Double!
     private var tag:Int = 0
     
-    init(_ name:String, _ course:Course, _ dueDate:String, _ importance:Bool?){
+    init(_ name:String, _ course:Course, _ dueDate:Date, _ importance:String){
         // Class Constructor
         self.name = name
         self.course = course
@@ -27,7 +27,7 @@ class Assignment: NSObject {
     }
     
     
-    func editAssignment(_ name:String, _ dueDate:String, _ importance:Bool?){
+    func editAssignment(_ name:String, _ dueDate:Date, _ importance:String){
         
     }
     
