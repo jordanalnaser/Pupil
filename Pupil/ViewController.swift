@@ -62,14 +62,36 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             }else{
                 // plus button is closed, open it
                 tappedImage.transform = CGAffineTransform.init(rotationAngle: 45)
-                self.addAssignmentView()
+    
             }
         })
         
     }
     
     
-    // This function is used to add an assignment view to input data for a new assignment
+     // This function is used to create an addCourseView to input data for a new assignment
+    func addCourseView(){
+        let frame = self.view.frame
+        
+        // making the temporary assignment view that will be used to input data
+        let addCourseView = AddCourseView(frame: CGRect(x: frame.minX + 5, y: frame.minY + 20, width: frame.width - 10, height: frame.height - 25))
+        
+        // used for the animation to work
+        addCourseView.contentScaleFactor = 0.1
+        
+        
+        self.view.addSubview(addCourseView)
+        
+        
+        
+        // This scales the view back to 1 for a nice Animation
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 10, options: UIViewAnimationOptions.allowAnimatedContent, animations: {
+            addCourseView.contentScaleFactor = 1
+        },completion:  nil)
+
+    }
+    
+      // This function is used to create an addAssignmentView to input data for a new assignment
     func addAssignmentView(){
         let frame = self.view.frame
         
