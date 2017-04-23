@@ -40,6 +40,13 @@ class Assignment: NSObject {
         return name
     }
 
+    func getCourseName() -> String {
+        return course.getName()
+    }
+    
+    func getDueDate() -> Date {
+        return dueDate
+    }
 }
 
 

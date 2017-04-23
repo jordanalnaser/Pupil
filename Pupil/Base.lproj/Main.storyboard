@@ -36,6 +36,64 @@
                                 <rect key="frame" x="0.0" y="50" width="375" height="464"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.40792317150000001" green="0.35998728660000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="cell" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="100" id="ccn-fi-2QY" userLabel="cell" customClass="CustomTableCell" customModule="Pupil" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ccn-fi-2QY" id="7Xw-LT-ani">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Derivatives" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4yj-gF-gOl" userLabel="assignmentName">
+                                                    <rect key="frame" x="18" y="8" width="231" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="htV-1X-XRp"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calculus I" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Db-xB-DLc" userLabel="courseName">
+                                                    <rect key="frame" x="20" y="24" width="229" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="R3d-q2-KRD"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.31554105725876863" green="0.31401670432515139" blue="0.31706541019238588" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due   on         4/25" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s0Q-7e-TrC" userLabel="dueDate">
+                                                    <rect key="frame" x="254" y="0.0" width="111" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="111" id="cYQ-Rv-Kob"/>
+                                                        <constraint firstAttribute="height" constant="49" id="zQy-D8-R54"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.96040693938020316" green="0.0" blue="0.053886203038474231" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="s0Q-7e-TrC" secondAttribute="bottom" id="7Cx-CJ-PJk"/>
+                                                <constraint firstItem="4yj-gF-gOl" firstAttribute="leading" secondItem="7Xw-LT-ani" secondAttribute="leadingMargin" constant="10" id="9mv-PI-WFN"/>
+                                                <constraint firstItem="s0Q-7e-TrC" firstAttribute="leading" secondItem="4yj-gF-gOl" secondAttribute="trailing" constant="5" id="FrM-QB-hvH"/>
+                                                <constraint firstAttribute="trailing" secondItem="s0Q-7e-TrC" secondAttribute="trailing" constant="10" id="JVr-A1-d5g"/>
+                                                <constraint firstItem="s0Q-7e-TrC" firstAttribute="top" secondItem="7Xw-LT-ani" secondAttribute="top" id="N2i-zY-er9"/>
+                                                <constraint firstItem="1Db-xB-DLc" firstAttribute="leading" secondItem="7Xw-LT-ani" secondAttribute="leading" constant="20" id="Njx-kY-H3a"/>
+                                                <constraint firstItem="4yj-gF-gOl" firstAttribute="top" secondItem="7Xw-LT-ani" secondAttribute="topMargin" id="SLp-NR-cON"/>
+                                                <constraint firstItem="s0Q-7e-TrC" firstAttribute="leading" secondItem="1Db-xB-DLc" secondAttribute="trailing" constant="5" id="c8a-1c-ccD"/>
+                                                <constraint firstAttribute="bottom" secondItem="1Db-xB-DLc" secondAttribute="bottom" id="pzN-NC-Vnh"/>
+                                                <constraint firstItem="s0Q-7e-TrC" firstAttribute="centerY" secondItem="7Xw-LT-ani" secondAttribute="centerY" id="ra3-qx-qYo"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="cell"/>
+                                        <connections>
+                                            <outlet property="assignmentName" destination="4yj-gF-gOl" id="9uB-BI-9hL"/>
+                                            <outlet property="courseName" destination="1Db-xB-DLc" id="X1A-dp-S7s"/>
+                                            <outlet property="dueDate" destination="s0Q-7e-TrC" id="APn-Xj-c7f"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus" translatesAutoresizingMaskIntoConstraints="NO" id="EsX-lr-uHv" userLabel="plusButton">
                                 <rect key="frame" x="280" y="584" width="75" height="75"/>

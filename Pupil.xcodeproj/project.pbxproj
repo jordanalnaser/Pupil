@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1915C0251EAC001D0012CCAD /* AssCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1915C0241EAC001D0012CCAD /* AssCourseView.swift */; };
 		1996D09B1EA6EF470058EBF2 /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */; };
+		19B6CA231EAD1E7900D3573A /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6CA221EAD1E7900D3573A /* CustomTableCell.swift */; };
 		19DCF2381E88B1390066C65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2371E88B1390066C65B /* AppDelegate.swift */; };
 		19DCF23A1E88B1390066C65B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2391E88B1390066C65B /* ViewController.swift */; };
 		19DCF23D1E88B1390066C65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19DCF23B1E88B1390066C65B /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		1915C0241EAC001D0012CCAD /* AssCourseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssCourseView.swift; sourceTree = "<group>"; };
 		1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
+		19B6CA221EAD1E7900D3573A /* CustomTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
 		19DCF2341E88B1390066C65B /* Pupil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19DCF2371E88B1390066C65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19DCF2391E88B1390066C65B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			children = (
 				1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */,
 				1915C0241EAC001D0012CCAD /* AssCourseView.swift */,
+				19B6CA221EAD1E7900D3573A /* CustomTableCell.swift */,
 			);
 			name = Views;
 			path = ..;
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F2E8361E8A16B4003EE340 /* Data.swift in Sources */,
+				19B6CA231EAD1E7900D3573A /* CustomTableCell.swift in Sources */,
 				19DCF2511E88B2BA0066C65B /* Course.swift in Sources */,
 				19DCF24D1E88B2640066C65B /* Assignment.swift in Sources */,
 				1915C0251EAC001D0012CCAD /* AssCourseView.swift in Sources */,
