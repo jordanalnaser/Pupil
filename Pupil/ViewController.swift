@@ -14,6 +14,8 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var plusButton: UIImageView!
+    let addHomeWorkButton = UIButton()
+    let addCourseButton = UIButton()
     
     // cell reuse id (cells that scroll out of view can be reused)
     let cellReuseIdentifier = "cell"
@@ -27,7 +29,20 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(plusButtonPressed(tapGestureRecognizer:)))
         plusButton.isUserInteractionEnabled = true
         plusButton.addGestureRecognizer(tapGestureRecognizer)
+      
+        // options buttons positions
+        addCourseButton.frame = CGRect(x: plusButton.frame.minX - 60, y: plusButton.frame.minY - 50, width: 50, height: 50)
+        addHomeWorkButton.frame = CGRect(x: plusButton.frame.minX + 30, y: plusButton.frame.minY - 75, width: 50, height: 50)
         
+        // perform setup on option buttons
+        setUpOptionButton(addCourseButton, imageFile: UIImage(named: "addCourse.png")!)
+        self.addHomeWorkButton.addTarget(self, action: #selector(addAssignmentView(_:)), for: .touchUpInside)
+        self.view.addSubview(addCourseButton)
+        
+        setUpOptionButton(addHomeWorkButton, imageFile: UIImage(named: "addHomework.png")!)
+        self.addCourseButton.addTarget(self, action: #selector(addCourseView(_:)), for: .touchUpInside)
+        self.view.addSubview(addHomeWorkButton)
+
     
         // Temp Add Classes
         addCourse("Math")
@@ -49,28 +64,70 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
 
     func plusButtonPressed(tapGestureRecognizer: UITapGestureRecognizer){
+
         // plus button has been pressed, do stuff now
         let tappedImage = tapGestureRecognizer.view as! UIImageView
-        let degrees = atan2(Double(tappedImage.transform.b), Double(tappedImage.transform.a)) * (180 / Double.pi);
+        let radians = atan2(Double(tappedImage.transform.b), Double(tappedImage.transform.a))
 
         // Add the two subviews to add assignment, and add class
         UIView.animate(withDuration: 0.4, animations: {
-            if degrees > 50 {
+            if radians > 0.785390 {
                 // plus button is open, close it
                 tappedImage.transform = CGAffineTransform.init(rotationAngle: 0)
-
+                self.dissmissPlusButtonOptions(self.addHomeWorkButton, self.addCourseButton)
             }else{
                 // plus button is closed, open it
-                tappedImage.transform = CGAffineTransform.init(rotationAngle: 45)
-    
+                tappedImage.transform = CGAffineTransform.init(rotationAngle: 0.785398)
+                self.plusButtonOptions(motherView: tappedImage, self.addHomeWorkButton, self.addCourseButton)
+                
+                
             }
         })
         
     }
     
+    // function is used to get rid of the plus button options when the user is done with them
+    func dissmissPlusButtonOptions(_ addHomeWorkButton:UIButton, _ addCourseButton:UIButton){
+        UIView.animate(withDuration: 1, animations: {
+            addHomeWorkButton.alpha = 0
+            addCourseButton.alpha = 0
+        }, completion:{
+            _ in
+            addHomeWorkButton.isUserInteractionEnabled = false
+            addCourseButton.isUserInteractionEnabled = false
+        })
+    }
+
+    // functions displaying the two options when the user taps the plus button
+    func plusButtonOptions(motherView: UIImageView, _ addHomeWorkButton:UIButton, _ addCourseButton:UIButton){
+        // Options added Animation
+        UIView.animate(withDuration: 1, animations: {
+            addCourseButton.alpha = 1
+            addHomeWorkButton.alpha = 1
+        }, completion: {
+            _ in
+            addHomeWorkButton.isUserInteractionEnabled = true
+            addCourseButton.isUserInteractionEnabled = true
+        })
+    }
+    
+
+    
+    // Setup Plus Button Options Functions
+    func setUpOptionButton(_ optionButton:UIButton, imageFile:UIImage){
+        optionButton.alpha = 0
+        optionButton.isUserInteractionEnabled = false
+        
+        // setting the image of the button
+        optionButton.setImage(imageFile, for: .normal)
+        
+        // The press animations of these butons
+        optionButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchDown)
+        optionButton.addTarget(self, action: #selector(buttonRelased(_:)), for: .touchDragExit)
+    }
     
      // This function is used to create an addCourseView to input data for a new assignment
-    func addCourseView(){
+    func addCourseView(_ button:UIButton){
         let frame = self.view.frame
         
         // making the temporary assignment view that will be used to input data
@@ -92,7 +149,7 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     }
     
       // This function is used to create an addAssignmentView to input data for a new assignment
-    func addAssignmentView(){
+    func addAssignmentView(_ button:UIButton){
         let frame = self.view.frame
         
         // making the temporary assignment view that will be used to input data
@@ -121,6 +178,13 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         
     }
    
+    // this creates the press down and up aniumation of a button
+    func buttonPressed(_ button:UIButton){
+        button.transform = CGAffineTransform(scaleX: 0.9, y: 0.9);
+    }
+    func buttonRelased(_ button:UIButton){
+        button.transform = CGAffineTransform(scaleX: 1.0, y: 1.0);
+    }
 
     
 // Table Stuff

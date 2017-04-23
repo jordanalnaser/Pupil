@@ -95,6 +95,7 @@ class AddCourseView: UIView {
     
     func addButtonPressed(_ sender: UIButton){
         // Function will remove view form its superview
+        addCourse(nameField.text!)
         self.dissmissView()
     }
     
@@ -107,19 +108,13 @@ class AddCourseView: UIView {
     }
     func dissmissView(){
         
-        //        UIView.animate(withDuration: 0.5, animations: {
-        //            self.addButton.alpha = 0
-        //            self.cancelButton.alpha = 0
-        //            self.nameField.alpha = 0
-        //            self.nameLabel.alpha = 0
-        //            self.dateLabel.alpha = 0
-        //            self.datePicker.alpha = 0
-        //            self.classLabel.alpha = 0
-        //            self.classPicker.alpha = 0
-        //            self.importanceLabel.alpha = 0
-        //            self.importancePicker.alpha = 0
-        //        }, completion: nil)
-        //
+        UIView.animate(withDuration: 0.5, animations: {
+                self.addButton.alpha = 0
+                self.cancelButton.alpha = 0
+                self.nameField.alpha = 0
+                self.nameLabel.alpha = 0
+        }, completion: nil)
+        
         UIView.animate(withDuration: 1, animations: {
             
             
