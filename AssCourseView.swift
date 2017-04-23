@@ -11,12 +11,11 @@ class AddCourseView: UIView {
     // Labels for each field in the view
     var nameLabel = UILabel()
     
-    // The user interactive fields in the view
+    // The user interactive objects in the view
     var nameField = UITextField()
-    
-    
     let addButton = UIButton()
     let cancelButton = UIButton()
+    let addSyllabus = UIButton()
     
     
     override init(frame: CGRect) {
@@ -42,12 +41,9 @@ class AddCourseView: UIView {
         nameField.frame = CGRect(x: 5, y: nameLabel.frame.maxY + 5, width: self.frame.width - 10, height: 40)
         nameField.backgroundColor = UIColor(red: 92/255.0, green: 94/255.0, blue: 77/255.0, alpha: 0.8)
         nameLabel.textColor = UIColor.white
-        
-        
         self.addSubview(nameField)
         
-        
-        // Add and Cancel Buttons Setup
+
         
         // button border color
         let blue = UIColor(red: 65.0/255, green: 147.0/255, blue: 245.0/255, alpha: 1.0)
@@ -58,7 +54,6 @@ class AddCourseView: UIView {
         cancelButton.backgroundColor = UIColor.white
         cancelButton.layer.borderColor = blue.cgColor
         cancelButton.layer.borderWidth = 1
-        
         cancelButton.frame = CGRect(x: 5, y: self.frame.height - 30, width: (self.frame.width / 2) - 10, height: 25)
         cancelButton.layer.cornerRadius = 5
         
@@ -75,7 +70,6 @@ class AddCourseView: UIView {
         addButton.backgroundColor = UIColor.white
         addButton.layer.borderColor = blue.cgColor
         addButton.layer.borderWidth = 1
-        
         addButton.frame = CGRect(x: cancelButton.frame.maxX + 5, y: self.frame.height - 30, width: (self.frame.width / 2) - 10, height: 25)
         addButton.layer.cornerRadius = 5
         
@@ -83,7 +77,23 @@ class AddCourseView: UIView {
         addButton.addTarget(self, action: #selector(addButtonPressed(_:)), for: .touchUpInside)
         addButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchDown)
         addButton.addTarget(self, action: #selector(buttonRelased(_:)), for: .touchDragExit)
+       
         self.addSubview(addButton)
+        
+        // Add Syllabus
+        addSyllabus.setTitle("Add Syllabus", for: .normal)
+        addSyllabus.setTitleColor(UIColor.black, for: .normal)
+        addSyllabus.backgroundColor = UIColor.white
+        addSyllabus.layer.borderColor = blue.cgColor
+        addSyllabus.layer.borderWidth = 1
+        addSyllabus.frame = CGRect(x: addSyllabus.frame.maxX + 5, y: 200, width: (self.frame.width) - 10, height: 25)
+        addSyllabus.layer.cornerRadius = 5
+        
+        // methods to be invoked when user interacts with this button
+        addSyllabus.addTarget(self, action: #selector(addSyllabusPressed(_:)), for: .touchUpInside)
+        addSyllabus.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchDown)
+        addSyllabus.addTarget(self, action: #selector(buttonRelased(_:)), for: .touchDragExit)
+        self.addSubview(addSyllabus)
     }
     
     
@@ -97,6 +107,16 @@ class AddCourseView: UIView {
         // Function will remove view form its superview
         addCourse(nameField.text!)
         self.dissmissView()
+    }
+    
+    // This Function will be invoked when the user taps the add syalbus button
+    func addSyllabusPressed(_ sender: UIButton) -> [UIImage]{
+        let syllabusImageArray = [UIImage]()
+        // do stuff here to :
+//        1- launch camera
+//        2- store images into the syllabusImagerArray
+//        
+        return syllabusImageArray
     }
     
     // this creates the press down and up aniumation of a button
@@ -113,6 +133,7 @@ class AddCourseView: UIView {
                 self.cancelButton.alpha = 0
                 self.nameField.alpha = 0
                 self.nameLabel.alpha = 0
+                self.addSyllabus.alpha = 0
         }, completion: nil)
         
         UIView.animate(withDuration: 1, animations: {

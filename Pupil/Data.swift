@@ -16,6 +16,7 @@
 
 
 import Foundation
+import UIKit
 
 // This will be a singleton where there is only one instance of it accessible to everything else in program
     
@@ -40,6 +41,12 @@ func findCourse(_ name:String) -> Bool{
     
     //course not found in dicaotnary
     return false
+}
+
+func addSyllabus(_ courseName:String, _ syllabus:[UIImage]){
+    if findCourse(courseName){
+        courses[courseName]!.addSyllabus(syllabus)
+    }
 }
 
 func addCourse(_ name:String){
