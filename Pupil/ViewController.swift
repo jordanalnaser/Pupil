@@ -220,6 +220,20 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         return 80
     }
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        //let currentCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier,for: indexPath) as! CustomTableCell
+        let currentCell = tableView.cellForRow(at: indexPath) as! CustomTableCell
+        if editingStyle == .delete {
+            let assignmentKey = currentCell.assignmentName.text! + currentCell.courseName.text!
+           
+            deleteAssignment(assignmentKey)
+        
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+        else {
+            print("Unhandled editing style! \(editingStyle)")
+        }
+    }
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = mainTableView.cellForRow(at: indexPath)! as! CustomTableCell
