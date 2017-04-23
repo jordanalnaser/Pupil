@@ -44,18 +44,14 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
         self.view.addSubview(addHomeWorkButton)
 
     
-        // Temp Add Classes
+        // Temp classes added, until we figure out a way to use Core Data to sore them on the device permenatly
         addCourse("Math")
         addCourse("English")
         addCourse("Programming")
-        
-        // Register the table view cell class and its reuse id
-        self.mainTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        
+
         // This view controller itself will provide the delegate methods for when cells are tapped and row data for the table view cells.
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,8 +106,6 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
             addCourseButton.isUserInteractionEnabled = true
         })
     }
-    
-
     
     // Setup Plus Button Options Functions
     func setUpOptionButton(_ optionButton:UIButton, imageFile:UIImage){
@@ -198,24 +192,38 @@ class ViewController: UIViewController,UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
         // create a new cell if needed or reuse an old one
-        let cell:UITableViewCell = self.mainTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier,for: indexPath) as! CustomTableCell
         
         // get tjhe name of the cell from the assignments array
         let assignment = Array(assignments.values)[indexPath.row]
         
+        // setting up[ the date object to due date formate, just the day and month
+        let date = assignment.getDueDate()
+        let calendar = NSCalendar.current
+        
+        let day = calendar.component(.day, from: date)
+        let month = calendar.component(.month, from: date)
+        let monthName = calendar.monthSymbols[month - 1]
+
+        let dueDateFormat = "Due on: \n" + monthName + " - " + String(day)
+        
         // set the text from the data model
-        cell.textLabel?.text = assignment.getName()
-     
+        cell.assignmentName?.text = assignment.getName()
+        cell.courseName?.text = assignment.getCourseName()
+        cell.dueDate?.text = dueDateFormat
+        
+        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+
     // method to run when table view cell is tapped
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = mainTableView.cellForRow(at: indexPath)!
-        print("You tapped cell (\(String(describing: cell.textLabel!.text!))).")
+        let cell = mainTableView.cellForRow(at: indexPath)! as! CustomTableCell
+        print("You tapped cell (\(String(describing: cell.assignmentName.text))).")
     }
-    
-    
-  
 }
 
