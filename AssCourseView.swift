@@ -7,7 +7,7 @@
 
 import UIKit
 
-class AddCourseView: UIView {
+class AddCourseView: UIView , UITextFieldDelegate{
     // Labels for each field in the view
     var nameLabel = UILabel()
     
@@ -40,7 +40,9 @@ class AddCourseView: UIView {
         // nameField
         nameField.frame = CGRect(x: 5, y: nameLabel.frame.maxY + 5, width: self.frame.width - 10, height: 40)
         nameField.backgroundColor = UIColor(red: 92/255.0, green: 94/255.0, blue: 77/255.0, alpha: 0.8)
-        nameLabel.textColor = UIColor.white
+        nameField.textColor = UIColor.white
+        
+        nameField.delegate = self
         self.addSubview(nameField)
         
 
@@ -153,5 +155,10 @@ class AddCourseView: UIView {
         super.init(coder: aDecoder)
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
+    }
     
 }

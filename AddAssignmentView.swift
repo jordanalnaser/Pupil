@@ -14,7 +14,7 @@ protocol AddButtonDelegate: class {
     func finishedAddingAssigment()
 }
 
-class AddAssignmentView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddAssignmentView: UIView, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
     weak var delegate:AddButtonDelegate?
     
     // Creating proeprties to be in the assignment page
@@ -55,6 +55,8 @@ class AddAssignmentView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         classPicker.delegate = self
         classPicker.dataSource = self
         
+        nameField.delegate = self
+        
         importancePicker.delegate = self
         importancePicker.dataSource = self
         
@@ -78,7 +80,7 @@ class AddAssignmentView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         // nameField
         nameField.frame = CGRect(x: 5, y: nameLabel.frame.maxY + 5, width: self.frame.width - 10, height: 40)
         nameField.backgroundColor = UIColor(red: 92/255.0, green: 94/255.0, blue: 77/255.0, alpha: 0.8)
-        nameLabel.textColor = UIColor.white
+        nameField.textColor = UIColor.white
 
         
         self.addSubview(nameField)
@@ -272,6 +274,12 @@ class AddAssignmentView: UIView, UIPickerViewDelegate, UIPickerViewDataSource {
         }else {
             importanceTag = importancePickerData[row]
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool // called when 'return' key pressed. return NO to ignore.
+    {
+        textField.resignFirstResponder()
+        return true;
     }
 
     
