@@ -10,6 +10,7 @@
 		1915C0251EAC001D0012CCAD /* AssCourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1915C0241EAC001D0012CCAD /* AssCourseView.swift */; };
 		1996D09B1EA6EF470058EBF2 /* AddAssignmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */; };
 		19B6CA231EAD1E7900D3573A /* CustomTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19B6CA221EAD1E7900D3573A /* CustomTableCell.swift */; };
+		19C534E81EBCF53C00420F43 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C534E71EBCF53C00420F43 /* TimerView.swift */; };
 		19DCF2381E88B1390066C65B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2371E88B1390066C65B /* AppDelegate.swift */; };
 		19DCF23A1E88B1390066C65B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2391E88B1390066C65B /* ViewController.swift */; };
 		19DCF23D1E88B1390066C65B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19DCF23B1E88B1390066C65B /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		19DCF2421E88B1390066C65B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19DCF2401E88B1390066C65B /* LaunchScreen.storyboard */; };
 		19DCF24A1E88B1F80066C65B /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2491E88B1F80066C65B /* Calendar.swift */; };
 		19DCF24D1E88B2640066C65B /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF24C1E88B2640066C65B /* Assignment.swift */; };
-		19DCF24F1E88B2A80066C65B /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF24E1E88B2A80066C65B /* Timer.swift */; };
 		19DCF2511E88B2BA0066C65B /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DCF2501E88B2BA0066C65B /* Course.swift */; };
 		19F2E8361E8A16B4003EE340 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F2E8351E8A16B4003EE340 /* Data.swift */; };
 /* End PBXBuildFile section */
@@ -26,6 +26,7 @@
 		1915C0241EAC001D0012CCAD /* AssCourseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssCourseView.swift; sourceTree = "<group>"; };
 		1996D09A1EA6EF470058EBF2 /* AddAssignmentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssignmentView.swift; sourceTree = "<group>"; };
 		19B6CA221EAD1E7900D3573A /* CustomTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableCell.swift; sourceTree = "<group>"; };
+		19C534E71EBCF53C00420F43 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TimerView.swift; path = "../../Downloads/Pupil-Timer5-4-17/TimerView.swift"; sourceTree = "<group>"; };
 		19DCF2341E88B1390066C65B /* Pupil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pupil.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19DCF2371E88B1390066C65B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19DCF2391E88B1390066C65B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,7 +36,6 @@
 		19DCF2431E88B1390066C65B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19DCF2491E88B1F80066C65B /* Calendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Calendar.swift; path = Pupil/Calendar.swift; sourceTree = "<group>"; };
 		19DCF24C1E88B2640066C65B /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = Pupil/Assignment.swift; sourceTree = "<group>"; };
-		19DCF24E1E88B2A80066C65B /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Timer.swift; path = Pupil/Timer.swift; sourceTree = "<group>"; };
 		19DCF2501E88B2BA0066C65B /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Course.swift; path = Pupil/Course.swift; sourceTree = "<group>"; };
 		19F2E8351E8A16B4003EE340 /* Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,7 +106,7 @@
 			children = (
 				19DCF2491E88B1F80066C65B /* Calendar.swift */,
 				19DCF24C1E88B2640066C65B /* Assignment.swift */,
-				19DCF24E1E88B2A80066C65B /* Timer.swift */,
+				19C534E71EBCF53C00420F43 /* TimerView.swift */,
 				19DCF2501E88B2BA0066C65B /* Course.swift */,
 				1996D09F1EA7150E0058EBF2 /* Helpers */,
 			);
@@ -193,8 +193,8 @@
 				19DCF24D1E88B2640066C65B /* Assignment.swift in Sources */,
 				1915C0251EAC001D0012CCAD /* AssCourseView.swift in Sources */,
 				19DCF23A1E88B1390066C65B /* ViewController.swift in Sources */,
+				19C534E81EBCF53C00420F43 /* TimerView.swift in Sources */,
 				19DCF24A1E88B1F80066C65B /* Calendar.swift in Sources */,
-				19DCF24F1E88B2A80066C65B /* Timer.swift in Sources */,
 				19DCF2381E88B1390066C65B /* AppDelegate.swift in Sources */,
 				1996D09B1EA6EF470058EBF2 /* AddAssignmentView.swift in Sources */,
 			);
