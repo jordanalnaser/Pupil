@@ -88,7 +88,7 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" identifier="cell"/>
                                         <connections>
-                                            <outlet property="assignmentName" destination="4yj-gF-gOl" id="9uB-BI-9hL"/>
+                                            <outlet property="assignmentName" destination="4yj-gF-gOl" id="wgr-sU-Kd7"/>
                                             <outlet property="courseName" destination="1Db-xB-DLc" id="X1A-dp-S7s"/>
                                             <outlet property="dueDate" destination="s0Q-7e-TrC" id="APn-Xj-c7f"/>
                                         </connections>
